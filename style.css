@@ -1,0 +1,37 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(189, 131, 244) ;
+}
+
+#wrapper{
+    text-align: center;
+    border: 2px solid purple;
+    padding: 40px;
+    border-radius: 40px;
+}
+
+.form #guess-feild{
+    border-radius: 20px;
+    width: 150px;
+    border: 2px solid purple;
+    outline: none;
+    padding: 10px;
+}
+
+.form #btn{
+    margin-top: 10px;
+    padding: 10px;
+    width: 150px;
+    background-color: purple;
+    color: white;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+}
