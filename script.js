@@ -1,4 +1,4 @@
-const randomnum = parseInt(Math.random() *100 + 1);
+let randomnum = parseInt(Math.random() *100 + 1);
 console.log(randomnum)
 
 const button = document.querySelector('#btn');
@@ -66,7 +66,7 @@ function checkguess (guess){
 // display guess clean the input feild also update previous guess or the guess remainning 
 function displayGuess (guess){
        userinput.value = ``
-       guessslot.innerHTML += `${guess} , `
+       guessslot.innerHTML += `${guesses} , `
        numguess++;
        remainning.innerHTML = `${11-numguess}`
 }
@@ -80,10 +80,26 @@ function displaymessage (message){
 // method to end the game
 
 function endGame (){
-
+   userinput.value = ''
+   userinput.setAttribute('disabled' , '')
+   p.classList.add('button')
+   p.innerHTML = `<h2 id="newGame">start a new button</h2>`
+   startover.appendChild(p)
+   playgame = false
+   newGame()
 }
 
 // method to start the new game
 function newGame (){
-
+     document.querySelector('newGame')
+     newGameButton.addEventListener('click' , function(e){
+      randomnum = parseInt(Math.random() *100 + 1);
+      prevguess = []
+      newGuess = 1;
+      guessslot.innerHTML = ''
+      remainning.innerHTML = `${11-numguess}`;
+      userinput.removeAttribute('disabled')
+      startover.removeChild(p)
+      playgame = true;
+     })
 }
