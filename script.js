@@ -5,7 +5,7 @@ const userinput = document.querySelector('#guess-feild');
 const guessslot = document.querySelector('.guesses')
 const remainning = document.querySelector('.remaining')
 const loworhi = document.querySelector('.final')
-const startover = document.querySelector('#result')
+const startover = document.querySelector('.result')
 
 
 const p = document.createElement('p')
@@ -20,7 +20,7 @@ if(playgame){
         const guess = parseInt(userinput.value);
         console.log(guess)
         validateGuess(guess)
-    })
+    });
 }
 
 
@@ -64,8 +64,8 @@ function checkguess (guess){
 
 // display guess clean the input feild also update previous guess or the guess remainning 
 function displayGuess (guess){
-       userinput.value = ``
-       guessslot.innerHTML += `${guesses} , `
+       userinput.value = ``;
+       guessslot.innerHTML += `${guess} , `
        numguess++;
        remainning.innerHTML = `${11-numguess}`
 }
@@ -90,7 +90,7 @@ function endGame (){
 
 // method to start the new game
 function newGame (){
-     document.querySelector('newGame')
+  const newGameButton = document.querySelector('#newGame');
      newGameButton.addEventListener('click' , function(e){
       randomnum = parseInt(Math.random() *100 + 1);
       prevguess = []
